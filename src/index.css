@@ -2,20 +2,19 @@
 
 @import "tailwindcss";
 
-@theme {
+@layer base {
+    :root{
     --font-family:"poppins",sans-serif;
-    --color-primary:#163a34;
-    --color-secondary:#395852;
-    --color-light-neutral-300:#d0dcd9;
-    --color-light-neutral-200:#e0ede3;
-    --color-light-neutral-100:#f6f5f1;
-    --color-light-neutral-0:#ffffff;
-    --color-orange-500:#fe9f6b;
-    --color-green-500:#49ac9b;
-    --color-indigo-500:#697ddb;
+    --cream:#fefcf7;
+    --light-cream:#f4f1eb;
+    --pale-orange:#fdd6ba;
+    --dark-grey:#333d4d;
+    --grey:#83888f;
+    --teal:#0e8784;
+    --teal-dark:#0c6562;
+}
+   
 }
 body{
     font-family: var(--font-family);
-    background-color: var(--color-light-neutral-100);
-    color:var(--color-primary);
 }
