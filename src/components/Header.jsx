@@ -6,7 +6,7 @@ function Header() {
     justify-between items-center">
     <a href="" className="flex items-center gap-2 text-2xl font-bold text-gray-700">
     <Coffee className="text-teal-500" size={32}/>
-     <span>Coffee Hub</span>
+     <span>Bo's coffee</span>
     </a>
     <nav className="hidden md:flex gap-8">
     <a href="" className="text-sm font-bold text-gray-700 hover:text-gray-900">Home</a>
