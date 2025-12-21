@@ -10,7 +10,7 @@ function Header() {
     </a>
     <nav className="hidden md:flex gap-8">
     <a href="" className="text-sm font-bold text-gray-700 hover:text-gray-900">Home</a>
-    <a href="" className="text-sm font-bold text-gray-700 hover:text-gray-900">About</a>
+    <a href="" className="text-sm font-bold text-gray-700 hover:text-gray-900">About Us</a>
     <a href="" className="text-sm font-bold text-gray-700 hover:text-gray-900">Create your Plan</a>
     </nav>
     <button className="md:hidden text-gray-700">
