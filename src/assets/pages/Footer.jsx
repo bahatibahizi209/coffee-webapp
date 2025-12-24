@@ -40,10 +40,6 @@ function Footer() {
               <Mail size={16} className="text-teal-600" />
               <span>hello@boscoffee.com</span>
             </div>
-            <div className="flex items-center gap-2 text-gray-300 text-sm">
-              <Clock size={16} className="text-teal-600" />
-              <span>Mon-Sun: 7AM - 10PM</span>
-            </div>
           </div>
 
           {/* Newsletter */}
@@ -70,7 +66,7 @@ function Footer() {
           <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
             {/* Copyright */}
             <p className="text-gray-400 text-sm text-center md:text-left">
-              © 2024 Bo's Coffee. All rights reserved.
+              © 2025 Bo's Coffee. All rights reserved.
             </p> 
             {/* Privacy Links */}
             <div className="flex justify-center gap-4 text-sm">
