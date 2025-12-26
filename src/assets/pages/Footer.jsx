@@ -1,5 +1,5 @@
-import { Coffee, Facebook, Instagram, Twitter, Mail, MapPin, Phone, Clock } from "lucide-react"
-
+import { Coffee, Mail, MapPin, Phone} from "lucide-react"
+import { Link } from "react-router-dom"
 function Footer() {
   return (
     <div className="bg-gray-700 py-10">
@@ -8,10 +8,10 @@ function Footer() {
         <div className="flex flex-col md:flex-row md:justify-between gap-8 mb-8">
           {/* Brand Section */}
           <div className="flex flex-col gap-4">
-            <a href="" className="flex items-center gap-2 text-xl font-bold text-white">
+            <Link to="/" className="flex items-center gap-2 text-xl font-bold text-white">
               <Coffee className="text-teal-600" size={32}/>
               <span>Bo's coffee</span>
-            </a>
+            </Link>
             <p className="text-gray-300 text-sm max-w-xs">
               Brewing excellence since day one. Your perfect cup awaits.
             </p>
@@ -20,9 +20,9 @@ function Footer() {
           {/* Quick Links */}
           <div className="flex flex-col gap-3">
             <h3 className="text-white font-semibold text-lg mb-2">Quick Links</h3>
-            <a href="" className="text-gray-300 hover:text-teal-500 transition text-sm">Home</a>
-            <a href="" className="text-gray-300 hover:text-teal-500 transition text-sm">About Us</a>
-            <a href="" className="text-gray-300 hover:text-teal-500 transition text-sm">Create your Plan</a>
+            <Link to="/" className="text-gray-300 hover:text-teal-500 transition text-sm">Home</Link>
+            <Link to="/aboutpage" className="text-gray-300 hover:text-teal-500 transition text-sm">About Us</Link>
+            <Link to="/createplan" className="text-gray-300 hover:text-teal-500 transition text-sm">Create your Plan</Link>
           </div>
 
           {/* Contact Info */}

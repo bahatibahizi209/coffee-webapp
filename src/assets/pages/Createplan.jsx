@@ -1,4 +1,5 @@
-import heroImage from"../../assets/image/coffee6.jpg"
+import { ChevronUp } from "lucide-react"
+import heroImage from"../../assets/image/createplan.jpg"
 function Createplan() {
   return (
     <div className="max-w-7xl mx-auto px-6 py-12">
@@ -39,7 +40,37 @@ function Createplan() {
           <section className="max-w-7xl mx-auto px-6 pb-32">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           {/* sidebar */}
-          <div className=""></div>
+          <div className="lg:cols-span-3 mb-12 lg:mb-0">
+          <div className="space-y-4">
+          <div className={`text-lg sm:text-2xl font-bold`}>
+          <span className="text-teal-600 mr-2 sm:mr-4">Item Number</span>       
+          </div>
+          </div>
+          </div>
+          {/* accordion */}
+          <div className="lg:cols-span-9 space-y-12">
+          {/* use map method  */}
+          <div>
+          <button className="w-full flex justify-between items-center mb-4 sm:mb-6">
+          <h2 className="text-xl sm:text-4xl font-bold text-gray-500">Section title</h2>
+          </button>
+          {/* conditional rendering */}
+          <span className="text-4xl sm:text-6xl font-bold text-teal-600"></span>
+          <ChevronUp className="text-teal-600"size={28}/>
+          {/* use map method */}
+          <div className={`grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 transition-all duration-300`}>
+          {/* use map method */}
+          <button className={`text-left p-6 sm:p-8 rounded-lg transition-all`}>
+          <h3 className="text-lg sm:text-2xl font-bold mb-2 sm:mb-4">
+          Subtitle
+          </h3>
+          <p className="text-sm sm:text-base opacity-80">Option Description</p>
+          </button>
+          </div>
+          </div>
+          {/* order summary */}
+          <div className="bg-gray-800 rounded-lg p-6 sm:12 mt-8"></div>
+          </div>
           </div>
           </section>
     </div>
