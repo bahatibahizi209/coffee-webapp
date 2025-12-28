@@ -20,9 +20,9 @@ function Footer() {
           {/* Quick Links */}
           <div className="flex flex-col gap-3">
             <h3 className="text-white font-semibold text-lg mb-2">Quick Links</h3>
-            <Link to="/" className="text-gray-300 hover:text-teal-500 transition text-sm">Home</Link>
-            <Link to="/aboutpage" className="text-gray-300 hover:text-teal-500 transition text-sm">About Us</Link>
-            <Link to="/createplan" className="text-gray-300 hover:text-teal-500 transition text-sm">Create your Plan</Link>
+            <Link to="/" className="text-gray-300 hover:text-teal-500 transition text-sm uppercase">Home</Link>
+            <Link to="/aboutpage" className="text-gray-300 hover:text-teal-500 transition text-sm uppercase">About Us</Link>
+            <Link to="/createplan" className="text-gray-300 hover:text-teal-500 transition text-sm uppercase">Create your Plan</Link>
           </div>
 
           {/* Contact Info */}

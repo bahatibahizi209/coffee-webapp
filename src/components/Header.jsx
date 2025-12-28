@@ -1,6 +1,9 @@
-import { Coffee, Menu } from 'lucide-react'
+import { Coffee,X, Menu } from 'lucide-react'
+import { useState } from 'react';
 import { Link } from "react-router-dom";
 function Header() {
+  const[isOpen,setIsOpen]=useState(false);
+
   return (
     <div className="bg-cream py-6">
     <div className="max-w-7xl mx-auto px-6 flex 
@@ -10,25 +13,25 @@ function Header() {
      <span>Bo's coffee</span>
     </Link>
     <nav className="hidden md:flex gap-8">
-    <Link to="/"className="text-sm font-bold text-gray-700 hover:text-gray-900">Home</Link>
-    <Link to="/aboutpage" className="text-sm font-bold text-gray-700 hover:text-gray-900">
+    <Link to="/"className="text-sm font-bold text-gray-500 hover:text-gray-600 uppercase">Home</Link>
+    <Link to="/aboutpage" className="text-sm font-bold text-gray-500 hover:text-gray-600 uppercase">
     About Us
     </Link>
     
-    <Link to="/createplan" className="text-sm font-bold text-gray-700 hover:text-gray-900">Create your Plan</Link>
+    <Link to="/createplan" className="text-sm font-bold text-gray-500 hover:text-gray-600 uppercase">Create your Plan</Link>
     </nav>
-    <button className="md:hidden text-gray-700">
-    <Menu size={23}/>
+    <button className="md:hidden text-gray-700" onClick={()=>setIsOpen(!isOpen)}>
+    {isOpen ?<X size={28}/> :<Menu size={28} /> }
     </button>
     </div>
-    {/* Mobile Menu */} 
-    {/* conditional rendering */}
-    {/* <div className="md:hidden bg-gray-200 px-6 pt-6 pb-6
+    {isOpen && (
+    <div className="md:hidden bg-gray-200 px-6 pt-6 pb-6
     flex flex-col gap-4">
-    <a href="" className="text-sm font-bold text-gray-700 hover:text-gray-900">Home</a>
-    <a href="" className="text-sm font-bold text-gray-700 hover:text-gray-900">About</a>
-    <a href="" className="text-sm font-bold text-gray-700 hover:text-gray-900">Create a Plan</a>
-    </div> */}
+    <Link to="/" className="text-sm font-bold text-gray-700 hover:text-gray-900 uppercase">Home</Link>
+    <Link to="/aboutpage" className="text-sm font-bold text-gray-700 hover:text-gray-900 uppercase">About</Link>
+    <Link to="/createplan" className="text-sm font-bold text-gray-700 hover:text-gray-900 uppercase">Create a Plan</Link>
+    </div> 
+    )} 
     </div>
   )
 }

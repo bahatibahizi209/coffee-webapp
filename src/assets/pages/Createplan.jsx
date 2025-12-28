@@ -36,43 +36,69 @@ function Createplan() {
             </div>
             </div>
             </section>
-          {/*   Accordion + sidebar */}
-          <section className="max-w-7xl mx-auto px-6 pb-32">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-          {/* sidebar */}
-          <div className="lg:cols-span-3 mb-12 lg:mb-0">
-          <div className="space-y-4">
-          <div className={`text-lg sm:text-2xl font-bold`}>
-          <span className="text-teal-600 mr-2 sm:mr-4">Item Number</span>       
-          </div>
-          </div>
-          </div>
-          {/* accordion */}
-          <div className="lg:cols-span-9 space-y-12">
-          {/* use map method  */}
-          <div>
-          <button className="w-full flex justify-between items-center mb-4 sm:mb-6">
-          <h2 className="text-xl sm:text-4xl font-bold text-gray-500">Section title</h2>
-          </button>
-          {/* conditional rendering */}
-          <span className="text-4xl sm:text-6xl font-bold text-teal-600"></span>
-          <ChevronUp className="text-teal-600"size={28}/>
+          {/* Accordion + sidebar */}
+<section className="max-w-7xl mx-auto px-6 pb-32">
+  <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+    {/* sidebar */}
+    <div className="lg:col-span-3 mb-12 lg:mb-0">
+      <div className="space-y-4">
+        <div className={`text-lg sm:text-2xl font-bold`}>
+          <span className="text-teal-600 mr-2 sm:mr-4">Item Number</span>
+          <span className="text-gray-700">Item Label</span>
+        </div>
+      </div>
+    </div>
+
+    {/* accordion */}
+    <div className="lg:col-span-9 space-y-12">
+      {/* use map method */}
+      <div>
+        <button className="w-full flex justify-between items-center mb-4 sm:mb-6">
+          <h2 className="text-xl sm:text-4xl font-bold text-gray-700">Section Title</h2>
+          <ChevronUp className="text-teal-600" size={28}/>
+        </button>
+
+        {/* conditional rendering */}
+        <div className="space-y-8">     
           {/* use map method */}
           <div className={`grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 transition-all duration-300`}>
-          {/* use map method */}
-          <button className={`text-left p-6 sm:p-8 rounded-lg transition-all`}>
-          <h3 className="text-lg sm:text-2xl font-bold mb-2 sm:mb-4">
-          Subtitle
-          </h3>
-          <p className="text-sm sm:text-base opacity-80">Option Description</p>
-          </button>
+            {/* use map method */}
+            <button className={`text-left p-6 sm:p-8 rounded-lg transition-all bg-gray-100 hover:bg-gray-200`}>
+              <h3 className="text-lg sm:text-2xl font-bold mb-2 sm:mb-4 text-gray-900">
+                Subtitle
+              </h3>
+              <p className="text-sm sm:text-base text-gray-700">Option Description</p>
+            </button>
           </div>
-          </div>
-          {/* order summary */}
-          <div className="bg-gray-800 rounded-lg p-6 sm:12 mt-8"></div>
-          </div>
-          </div>
-          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* order summary - aligned with accordion */}
+  <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mt-16">
+    <div className="lg:col-span-3"></div>
+    <div className="lg:col-span-9">
+      <div className="bg-gray-800 rounded-lg p-6 sm:p-12">
+        <h3 className="text-gray-500 uppercase text-sm mb-4 opacity-50">Order summary</h3>
+        <p className="text-white text-base sm:text-l leading-relaxed">
+          I drink my coffee as{" "}
+          <span className="text-teal-500 font-bold">__</span> , with a{" "}
+          <span className="text-teal-500 font-bold">__</span> type of bean.{" "}
+          <span className="text-teal-500 font-bold">__</span> ground ala{" "}
+          <span className="text-teal-500 font-bold">__</span> ,sent to me{" "}
+          <span className="text-teal-500 font-bold">__</span>
+        </p>
+      </div>
+
+      <div className="text-center mt-6">
+        <button className={`bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 sm:py-4 px-6 sm:px-12 rounded transition-all`}>
+          Create my plan!
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
     </div>
   )
 }

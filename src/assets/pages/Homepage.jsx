@@ -1,5 +1,48 @@
 import { Box, BoxIcon } from "lucide-react"
 import Hero from "../image/coffee6.jpg"
+import GranEspresso from "../image/granespresso.png"
+import Planalto from "../image/planalto.png"
+import Piccollo from "../image/piccollo.png"
+import Danche from "../image/danche.png"
+const coffeeItems=[
+{
+  src: GranEspresso,
+  title: "Gran Espresso",
+  desc: "Light and flavorful blend with cocoa and black pepper for an intense experience.",
+},
+{
+  src: Planalto,
+  title: "Planalto",
+  desc: "Brazilian dark roast with rich and velvelty body and hints of fruits and nuts.",
+},
+{
+  src: Piccollo,
+  title: "Piccollo",
+  desc: "Mild and smooth blend featuring notes of toasted almond and dried cherry.",
+},
+{
+  src: Danche,
+  title: "Danche",
+  desc: "Ethiopian hand-harvested blend densely packed with vibrant fruit notes.",
+} 
+];
+const boxes=[
+{
+  src: GranEspresso,
+  title: "Best quality",
+  desc: "Discover an endless variety of the world’s best artisan coffee from each of our roasters.",
+},
+{
+  src: Planalto,
+  title: "Exclusive benefits",
+  desc: "Discover an endless variety of the world’s best artisan coffee from each of our roasters.",
+},
+{
+  src: Piccollo,
+  title: "Free shipping",
+  desc: "We cover the cost and coffee is delivered fast. Peak freshness: guaranteed.",
+}
+];
 function Homepage() {
   return (
     <div className="">
@@ -30,14 +73,17 @@ function Homepage() {
     <h2 className="text-center text-3xl sm:text-5xl
     font-bold text-gray-700 opacity-30 mb-12 sm:mb-20">Our Collection</h2>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-    {/* use map method */}
+    {/* use map method */}  
+    {coffeeItems.map((item,index)=>(
     <div className="text-center">
     <div className="mb-6 flex justify-center">
-    <img src="" alt="" className="w-40 h-40 sm:w-48 sm:h-48 object-cover rounded" />
+    <img src={item.src} alt="" className="w-40 h-40 sm:w-48 sm:h-48 object-cover rounded" />
     </div>
-     <h3 className="text-xl sm:text-2xl font-bold text-gray-700 opacity-80">Coffee Title</h3>
-     <p className="text-sm sm:text-base leading-relaxed">Coffee description</p>
+     <h3 className="text-xl sm:text-2xl font-bold text-gray-700 opacity-80">{item.title}</h3>
+     <p className="text-sm sm:text-base leading-relaxed">{item.desc}</p>
     </div>
+    ))}
+    
     </div>
     </section>
     {/* why choose us */}
