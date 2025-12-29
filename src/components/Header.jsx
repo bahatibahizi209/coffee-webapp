@@ -10,7 +10,7 @@ function Header() {
     justify-between items-center">
     <Link to="/" className="flex items-center gap-2 text-2xl font-bold text-gray-700">
     <Coffee className="text-teal-500" size={32}/>
-     <span>Bo's coffee</span>
+     <span className="font-fraunces font-extrabold" >Bo's coffee</span>
     </Link>
     <nav className="hidden md:flex gap-8">
     <Link to="/"className="text-sm font-bold text-gray-500 hover:text-gray-600 uppercase">Home</Link>

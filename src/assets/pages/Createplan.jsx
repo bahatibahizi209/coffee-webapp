@@ -9,10 +9,10 @@ function Createplan() {
             style={{backgroundImage:`url(${heroImage})`}}/>
 
             <div className="relative z-10 max-w-xl sm:ml-16 text-center px-4 sm:px-0">
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4 leading-tight">
+            <h1 className="font-fraunces text-4xl sm:text-5xl font-bold text-white mb-4 leading-tight">
             Create a plan
             </h1>
-            <p className="text-white text-base sm:text-lg leading-relaxed opacity-800">
+            <p className="text-gray-200 text-base sm:text-lg leading-relaxed opacity-800">
             Build a subscription plan that best fits your needs. we offer an assortment of the best artisan
             coffees from around the world delivered fresh to your door.
             </p>
@@ -67,7 +67,7 @@ function Createplan() {
               <h3 className="text-lg sm:text-2xl font-bold mb-2 sm:mb-4 text-gray-900">
                 Subtitle
               </h3>
-              <p className="text-sm sm:text-base text-gray-700">Option Description</p>
+              <p className="font-fraunces text-sm sm:text-base text-gray-700">Option Description</p>
             </button>
           </div>
         </div>
@@ -80,7 +80,7 @@ function Createplan() {
     <div className="lg:col-span-3"></div>
     <div className="lg:col-span-9">
       <div className="bg-gray-800 rounded-lg p-6 sm:p-12">
-        <h3 className="text-gray-500 uppercase text-sm mb-4 opacity-50">Order summary</h3>
+        <h3 className="font-fraunces text-gray-500 uppercase text-sm mb-4 opacity-50">Order summary</h3>
         <p className="text-white text-base sm:text-l leading-relaxed">
           I drink my coffee as{" "}
           <span className="text-teal-500 font-bold">__</span> , with a{" "}

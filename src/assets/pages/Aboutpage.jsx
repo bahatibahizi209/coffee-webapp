@@ -15,10 +15,10 @@ function Aboutpage() {
         <div className="absolute inset-0 bg-cover bg-center opacity-60"
         style={{backgroundImage:`url(${heroImage})`}}/>
         <div className="relative z-10 max-w-2xl sm:ml-16 mx-auto text-center sm:text-left">
-        <h1 className="text-3xl sm:text-6xl font-bold text-white mb-6 leading-tight">
+        <h1 className="font-fraunces text-3xl sm:text-6xl font-extrabold text-white mb-6 leading-tight">
         About Us
         </h1>
-        <p className="text-white text-sm sm:text-lg leading-relaxed opacity-800">
+        <p className="text-gray-200 text-sm sm:text-lg leading-relaxed opacity-800">
         Bo's coffee began its journey of exotic discovery in 1999,highlighting stories of coffee from
         around the world.
         we have since been dedicated to bring the perfect cup from bean to brew in every shipment.
@@ -31,7 +31,7 @@ function Aboutpage() {
         <img src={aboutImage} alt="" className="
         rounded-lg w-50% h-64 sm:h-80 md:h-[400px] object-cover" />
         <div>
-        <h2 className="text-2xl sm:text-4xl font-bold text-gray-700 mb-4 sm:mb-">Out Commitment</h2>
+        <h2 className="font-fraunces text-2xl sm:text-4xl font-extrabold text-gray-700 mb-4 sm:mb-">Out Commitment</h2>
         <p className="text-gray-700 opacity-80 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
         We're built on simple mission and a Commitment to doing good along the way.we want to make it easy
         for you to discover and brew the world's best coffee at home.
@@ -42,7 +42,7 @@ function Aboutpage() {
         <section className="max-w-7xl mx-auto px-6 py-16 sm:py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
         <div className="">
-        <h2 className="text-2xl sm:text-4xl font-bold text-gray-700 mb-4 sm:mb-8">Uncomprimising quality</h2>
+        <h2 className="font-fraunces text-2xl sm:text-4xl font-extrabold text-gray-700 mb-4 sm:mb-8">Uncomprimising quality</h2>
         <p className="text-gray-700 opacity-80 leading-relaxed mb-4 sm:mb-4 text-sm sm:text-base">
         Although we work with growers who pay close attention to all stages of harvest and processing, we employ
         a rigorous quality control program to avoid over-roasting or drying the coffee.
@@ -57,7 +57,7 @@ function Aboutpage() {
         </section>
         <section className="max-w-7xl mx-auto px-6 py-16 sm:py-24">
         <div className="text-center mb-12 sm:mb-20">
-        <h2 className="text-2xl sm:text-4xl font-bold text-gray-700 sm:mb-6">Our Headquarters</h2>
+        <h2 className="font-fraunces text-2xl sm:text-4xl font-bold text-gray-700 sm:mb-6">Our Headquarters</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
   <div className="relative group hover:cursor-pointer">
@@ -68,7 +68,7 @@ function Aboutpage() {
   </div>
   <div className="px-6 pb-8 -mt-8 relative">
   <div className="inline-block bg-white rounded-full px-6 py-2 shadow-lg mb-4 border-2 border-[#0e8784]">
-  <h3 className="text-xl sm:text-2xl font-bold text-[#0e8784]">United Kingdom</h3>
+  <h3 className="font-fraunces text-xl sm:text-2xl font-bold text-[#0e8784]">United Kingdom</h3>
   </div>  
     <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-md space-y-1 text-left">
         <p className="text-sm sm:text-base text-[#333d4d] font-medium flex items-center">
@@ -92,7 +92,7 @@ function Aboutpage() {
   </div>
   <div className="px-6 pb-8 -mt-8 relative">
   <div className="inline-block bg-white rounded-full px-6 py-2 shadow-lg mb-4 border-2 border-[#0e8784]">
-  <h3 className="text-xl sm:text-2xl font-bold text-[#0e8784]">Canada</h3>
+  <h3 className="font-fraunces text-xl sm:text-2xl font-bold text-[#0e8784]">Canada</h3>
   </div>  
     <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-md space-y-1 text-left">
         <p className="text-sm sm:text-base text-[#333d4d] font-medium flex items-center">
@@ -117,7 +117,7 @@ function Aboutpage() {
   </div>
   <div className="px-6 pb-8 -mt-8 relative">
   <div className="inline-block bg-white rounded-full px-6 py-2 shadow-lg mb-4 border-2 border-[#0e8784]">
-  <h3 className="text-xl sm:text-2xl font-bold text-[#0e8784]">Australia</h3>
+  <h3 className="font-fraunces text-xl sm:text-2xl font-bold text-[#0e8784]">Australia</h3>
   </div>  
     <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-md space-y-1 text-left">
         <p className="text-sm sm:text-base text-[#333d4d] font-medium flex items-center">

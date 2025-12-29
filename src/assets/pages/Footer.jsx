@@ -2,15 +2,15 @@ import { Coffee, Mail, MapPin, Phone} from "lucide-react"
 import { Link } from "react-router-dom"
 function Footer() {
   return (
-    <div className="bg-gray-700 py-10">
-      <div className="max-w-7xl mx-auto px-6">
+    <div className="">
+      <div className="bg-gray-700 py-4   max-w-7xl mx-auto px-5">
         {/* Main Footer Content */}
         <div className="flex flex-col md:flex-row md:justify-between gap-8 mb-8">
           {/* Brand Section */}
           <div className="flex flex-col gap-4">
             <Link to="/" className="flex items-center gap-2 text-xl font-bold text-white">
               <Coffee className="text-teal-600" size={32}/>
-              <span>Bo's coffee</span>
+              <span className="font-fraunces font-extrabold">Bo's coffee</span>
             </Link>
             <p className="text-gray-300 text-sm max-w-xs">
               Brewing excellence since day one. Your perfect cup awaits.
