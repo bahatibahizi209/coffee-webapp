@@ -1,6 +1,136 @@
 import { ChevronUp } from "lucide-react"
 import heroImage from"../../assets/image/createplan.jpg"
-function Createplan() {
+const steps=[
+{
+  number:"01",
+  title: "Pick your coffee",
+  desc: "Select from our evolving range of artisan coffees. Our beans are ethically sourced and we pay fair prices for them. There are new coffees in all profiles every month for you to try out.",
+},
+{
+  number:"02",
+  title: "Choose the frequency",
+  desc: "Customize your order frequency, quantity, even your roast style and grind type. Pause, skip or cancel your subscription with no commitment through our online portal.",
+},
+{
+  number:"03",
+  title: "Receive and enjoy!",
+  desc: "We ship your package within 48 hours, freshly roasted. Sit back and enjoy award-winning world-class coffees curated to provide a distinct tasting experience.",
+}
+];
+const sidebar=[
+{
+number:"01",
+label:"Preferences",
+category:"preferences"
+},
+{
+number:"02",
+label:"Bean Type",
+category:"Bean Type"
+},
+{
+number:"03",
+label:"Quantity",
+category:"quantity"
+},
+{
+number:"04",
+label:"GrindOption",
+category:"GrindOption"
+},
+{
+number:"05",
+label:"Deliveries",
+category:"deliveries"
+},
+];
+const accordion=[
+{ 
+category:"want coffee",
+title: "How do you drink your coffee?",
+options:[
+  {
+    value:"Capsule",
+    substitle: "",
+    description:"Compatible with Nespresso systems and similar brewers",
+  },
+    {
+    value:"Filter",
+    substitle: "",
+    description:"For pour over or drip methods like Aeropress, Chemex, and V60",
+  },
+    {
+    value:"Espresso",
+    substitle: "",
+    description:"Dense and finely ground beans for an intense, flavorful experience",
+  }
+],
+},
+{ 
+category:"type coffee",
+title: "What type of coffee?",
+options:[
+  {
+    value:"Single origin",
+    substitle: "",
+    description:"Distinct, high quality coffee from a specific family-owned farm.",
+  },
+    {
+    value:"Decaf",
+    substitle: "",
+    description:"Just like regular coffee, except the caffeine has been removed.",
+  },
+    {
+    value:"Blended",
+    substitle: "",
+    description:"Combination of two or three dark roasted beans of organic coffees.",
+  }
+],
+},
+{ 
+category:"type coffee",
+title: "How much would you like?",
+options:[
+  {
+    value:"250g",
+    substitle: "",
+    description:"Perfect for the solo drinker. Yields about 12 delicious cups.",
+  },
+    {
+    value:"500g",
+    substitle: "",
+    description:"Perfect option for a couple. Yields about 40 delectable cups.",
+  },
+    {
+    value:"1000g",
+    substitle: "",
+    description:"Perfect for offices and events. Yields about 90 delightful cups.",
+  }
+],
+},
+{ 
+category:"type coffee",
+title: "Want us to grind them?",
+options:[
+  {
+    value:"Wholebean",
+    substitle: "",
+    description:"Best choice if you cherish the full sensory experience.",
+  },
+    {
+    value:"Filter",
+    substitle: "",
+    description:"For drip or pour-over coffee methods such as V60 or Aeropress.",
+  },
+    {
+    value:"Cafetiére",
+    substitle: "",
+    description:"Course ground beans specially suited for french press coffee.",
+  }
+],
+}
+]
+function Createplan() { 
   return (
     <div className="max-w-7xl mx-auto px-6 py-12">
             <section className="relative rounded-lg overflow-hidden bg-gray-700
@@ -25,13 +155,16 @@ function Createplan() {
             <div className="absolute top-6 left-6 right-6 h-0.5 bg-orange-200 hidden sm:block"/>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 relative">
           {/* use map method */}
+          {steps.map((step,index)=>(
           <div className="text-center sm:text-left">
           <div className="w-12 h-12 rounded-full border-2
           border-teal-600 bg-gray-800 mb-6 mx-auto sm:mx-0"/>
-          <h3 className="text-5xl sm:text-7xl font-bold text-orange-200 mb-4">01</h3>
-          <h4 className="text-xl sm:text-2xl font-bold text-white mb-3">Title</h4>
-          <p className="text-white opacity-80 leading-relaxed text-sm sm:text-base">Description</p>       
+          <h3 className="font-fraunces text-5xl sm:text-7xl font-extrabold text-orange-200 mb-4">{step.number}</h3>
+          <h4 className="font-fraunces text-xl sm:text-2xl font-extrabold text-white mb-3">{step.title}</h4>
+          <p className="text-white opacity-80 leading-relaxed text-sm sm:text-base">{step.desc}</p>       
           </div>
+          ))}
+          
           </div>
             </div>
             </div>
@@ -40,12 +173,16 @@ function Createplan() {
 <section className="max-w-7xl mx-auto px-6 pb-32">
   <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
     {/* sidebar */}
+
     <div className="lg:col-span-3 mb-12 lg:mb-0">
       <div className="space-y-4">
-        <div className={`text-lg sm:text-2xl font-bold`}>
-          <span className="text-teal-600 mr-2 sm:mr-4">Item Number</span>
-          <span className="text-gray-700">Item Label</span>
-        </div>
+        {sidebar.map((item,index)=>(
+         <div className={`text-lg sm:text-2xl font-bold`}>
+          <span className="font-fraunces text-teal-600 mr-2 sm:mr-4">{item.number}</span>
+        <span className="font-fraunces text-gray-700">{item.label}</span>
+        </div>  
+        ))}
+       
       </div>
     </div>
 
