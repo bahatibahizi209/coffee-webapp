@@ -1,5 +1,6 @@
-import { ChevronUp } from "lucide-react"
+import { ChevronDown, ChevronUp } from "lucide-react"
 import heroImage from"../../assets/image/createplan.jpg"
+import { useState } from "react";
 const steps=[
 {
   number:"01",
@@ -25,8 +26,8 @@ category:"preferences"
 },
 {
 number:"02",
-label:"Bean Type",
-category:"Bean Type"
+label:"BeanType",
+category:"BeanType"
 },
 {
 number:"03",
@@ -46,91 +47,106 @@ category:"deliveries"
 ];
 const accordion=[
 { 
-category:"want coffee",
+category:"Preferences",
 title: "How do you drink your coffee?",
 options:[
   {
     value:"Capsule",
-    substitle: "",
+    substitle: "Capsule",
     description:"Compatible with Nespresso systems and similar brewers",
   },
     {
     value:"Filter",
-    substitle: "",
+    substitle: "Filter",
     description:"For pour over or drip methods like Aeropress, Chemex, and V60",
   },
     {
     value:"Espresso",
-    substitle: "",
+    substitle: "Espresso",
     description:"Dense and finely ground beans for an intense, flavorful experience",
   }
 ],
 },
 { 
-category:"type coffee",
+category:"BeanType",
 title: "What type of coffee?",
 options:[
   {
     value:"Single origin",
-    substitle: "",
+    substitle: "Single origin",
     description:"Distinct, high quality coffee from a specific family-owned farm.",
   },
     {
     value:"Decaf",
-    substitle: "",
+    substitle: "Decaf",
     description:"Just like regular coffee, except the caffeine has been removed.",
   },
     {
     value:"Blended",
-    substitle: "",
+    substitle: "Blended",
     description:"Combination of two or three dark roasted beans of organic coffees.",
   }
 ],
 },
 { 
-category:"type coffee",
+category:"quantity",
 title: "How much would you like?",
 options:[
   {
     value:"250g",
-    substitle: "",
+    substitle: "250g",
     description:"Perfect for the solo drinker. Yields about 12 delicious cups.",
   },
     {
     value:"500g",
-    substitle: "",
+    substitle: "500g",
     description:"Perfect option for a couple. Yields about 40 delectable cups.",
   },
     {
     value:"1000g",
-    substitle: "",
+    substitle: "1000g",
     description:"Perfect for offices and events. Yields about 90 delightful cups.",
   }
 ],
 },
 { 
-category:"type coffee",
+category:"GrindOption",
 title: "Want us to grind them?",
 options:[
   {
     value:"Wholebean",
-    substitle: "",
+    substitle: "Wholebean",
     description:"Best choice if you cherish the full sensory experience.",
   },
     {
     value:"Filter",
-    substitle: "",
+    substitle: "Filter",
     description:"For drip or pour-over coffee methods such as V60 or Aeropress.",
   },
     {
     value:"Cafetiére",
-    substitle: "",
+    substitle: "Cafetiére",
     description:"Course ground beans specially suited for french press coffee.",
   }
 ],
 }
 ]
 function Createplan() { 
+const [openSection,setOpenSection]=useState("preferences");
+const [sections,setSelections]=useState({
+  preferences:"",
+  beanType:"",
+  quantity:"",
+  grindOption:"",
+  deliveries:"",
+});
+const toggleSection =(section)=>{
+  setOpenSection(openSection === section?"": section);
+}
+const selectOption =(category,value)=>{
+  setSelections({...sections,[category]:value});
+}
+
   return (
     <div className="max-w-7xl mx-auto px-6 py-12">
             <section className="relative rounded-lg overflow-hidden bg-gray-700
@@ -189,26 +205,31 @@ function Createplan() {
     {/* accordion */}
     <div className="lg:col-span-9 space-y-12">
       {/* use map method */}
-      <div>
+      {accordion.map((accordionItem,index)=>(
+        <div>
         <button className="w-full flex justify-between items-center mb-4 sm:mb-6">
-          <h2 className="text-xl sm:text-4xl font-bold text-gray-700">Section Title</h2>
-          <ChevronUp className="text-teal-600" size={28}/>
+          <h2 className="font-fraunces text-xl sm:text-4xl font-bold text-gray-500">{accordionItem.title}</h2>
+          <ChevronDown className="text-teal-600" size={28}/>
         </button>
-
         {/* conditional rendering */}
         <div className="space-y-8">     
           {/* use map method */}
+          {}
           <div className={`grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 transition-all duration-300`}>
             {/* use map method */}
-            <button className={`text-left p-6 sm:p-8 rounded-lg transition-all bg-gray-100 hover:bg-gray-200`}>
-              <h3 className="text-lg sm:text-2xl font-bold mb-2 sm:mb-4 text-gray-900">
-                Subtitle
+            {accordionItem.options.map((option,index)=>(
+            <button className={`text-left p-6 sm:p-8 rounded-lg transition-all bg-gray-200 hover:bg-gray-300`}>
+              <h3 className="font-fraunces text-lg sm:text-2xl font-bold mb-2 sm:mb-4 text-gray-900">
+              {option.substitle}
               </h3>
-              <p className="font-fraunces text-sm sm:text-base text-gray-700">Option Description</p>
+              <p className="text-sm sm:text-base text-gray-700">{option.description}</p>
             </button>
+            ))}
+           
           </div>
         </div>
       </div>
+      ))}
     </div>
   </div>
 
