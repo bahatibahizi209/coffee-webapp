@@ -133,7 +133,7 @@ options:[
 ]
 function Createplan() { 
 const [openSection,setOpenSection]=useState("preferences");
-const [sections,setSelections]=useState({
+const [selections,setSelections]=useState({
   preferences:"",
   beanType:"",
   quantity:"",
@@ -146,7 +146,12 @@ const toggleSection =(section)=>{
 const selectOption =(category,value)=>{
   setSelections({...sections,[category]:value});
 }
-
+const isComplete= 
+selections.preferences && 
+selections.beanType && 
+selections.quantity && 
+selections.grindOption && 
+selections.deliveries;
   return (
     <div className="max-w-7xl mx-auto px-6 py-12">
             <section className="relative rounded-lg overflow-hidden bg-gray-700
@@ -193,7 +198,7 @@ const selectOption =(category,value)=>{
     <div className="lg:col-span-3 mb-12 lg:mb-0">
       <div className="space-y-4">
         {sidebar.map((item,index)=>(
-         <div className={`text-lg sm:text-2xl font-bold`}>
+         <div className={`text-lg sm:text-2xl font-bold ${selections[item.category] ?"text-gray-800" : "text-gray-400"}`}>
           <span className="font-fraunces text-teal-600 mr-2 sm:mr-4">{item.number}</span>
         <span className="font-fraunces text-gray-700">{item.label}</span>
         </div>  
@@ -207,7 +212,7 @@ const selectOption =(category,value)=>{
       {/* use map method */}
       {accordion.map((accordionItem,index)=>(
         <div>
-        <button className="w-full flex justify-between items-center mb-4 sm:mb-6">
+        <button className="w-full flex justify-between items-center mb-4 sm:mb-6" onClick={()=>toggleSection(accordionItem.category)}>
           <h2 className="font-fraunces text-xl sm:text-4xl font-bold text-gray-500">{accordionItem.title}</h2>
           <ChevronDown className="text-teal-600" size={28}/>
         </button>
@@ -218,7 +223,9 @@ const selectOption =(category,value)=>{
           <div className={`grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 transition-all duration-300`}>
             {/* use map method */}
             {accordionItem.options.map((option,index)=>(
-            <button className={`text-left p-6 sm:p-8 rounded-lg transition-all bg-gray-200 hover:bg-gray-300`}>
+            <button className={`text-left p-6 sm:p-8 rounded-lg transition-all 
+            ${selections[accordionItem.category]===option.value ?"bg-gray-200":"hover:bg-gray-300"}`} 
+            onClick={()=>selectOption(accordionItem.category,option.value)}>
               <h3 className="font-fraunces text-lg sm:text-2xl font-bold mb-2 sm:mb-4 text-gray-900">
               {option.substitle}
               </h3>

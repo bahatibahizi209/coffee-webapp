@@ -19,7 +19,7 @@ function Footer() {
 
           {/* Quick Links */}
           <div className="flex flex-col gap-3">
-            <h3 className="text-white font-semibold text-lg mb-2">Quick Links</h3>
+            <h3 className="font-fraunces text-white font-semibold text-lg mb-2">Quick Links</h3>
             <Link to="/" className="text-gray-300 hover:text-teal-500 transition text-sm uppercase">Home</Link>
             <Link to="/aboutpage" className="text-gray-300 hover:text-teal-500 transition text-sm uppercase">About Us</Link>
             <Link to="/createplan" className="text-gray-300 hover:text-teal-500 transition text-sm uppercase">Create your Plan</Link>
@@ -27,7 +27,7 @@ function Footer() {
 
           {/* Contact Info */}
           <div className="flex flex-col gap-3">
-            <h3 className="text-white font-semibold text-lg mb-2">Get in Touch</h3>
+            <h3 className="font-fraunces text-white font-semibold text-lg mb-2">Get in Touch</h3>
             <div className="flex items-center gap-2 text-gray-300 text-sm">
               <MapPin size={16} className="text-teal-600" />
               <span>123 Coffee Street, Kigali</span>
@@ -44,7 +44,7 @@ function Footer() {
 
           {/* Newsletter */}
           <div className="flex flex-col gap-3">
-            <h3 className="text-white font-semibold text-lg mb-2">Newsletter</h3>
+            <h3 className="font-fraunces text-white font-semibold text-lg mb-2">Newsletter</h3>
             <p className="text-gray-300 text-sm max-w-xs">
               Subscribe for exclusive offers and updates!
             </p>
@@ -54,7 +54,8 @@ function Footer() {
                 placeholder="Your email" 
                 className="px-3 py-2 bg-gray-600 text-white text-sm rounded focus:outline-none focus:ring-2 focus:ring-teal-600"
               />
-              <button className="px-4 py-2 bg-teal-600 text-white text-sm rounded hover:bg-teal-700 transition">
+              <button className="font-fraunces font-extrabold px-4 py-2 bg-teal-600 text-white text-sm rounded 
+              hover:bg-teal-700 transition hover:cursor-pointer">
                 Subscribe
               </button>
             </div>
