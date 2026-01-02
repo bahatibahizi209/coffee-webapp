@@ -18,36 +18,16 @@ const steps=[
   desc: "We ship your package within 48 hours, freshly roasted. Sit back and enjoy award-winning world-class coffees curated to provide a distinct tasting experience.",
 }
 ];
-const sidebar=[
-{
-number:"01",
-label:"Preferences",
-category:"preferences"
-},
-{
-number:"02",
-label:"BeanType",
-category:"BeanType"
-},
-{
-number:"03",
-label:"Quantity",
-category:"quantity"
-},
-{
-number:"04",
-label:"GrindOption",
-category:"GrindOption"
-},
-{
-number:"05",
-label:"Deliveries",
-category:"deliveries"
-},
+const sidebar = [
+  { number:"01", label:"Preferences", category:"preferences" },
+  { number:"02", label:"BeanType", category:"beanType" },
+  { number:"03", label:"Quantity", category:"quantity" },
+  { number:"04", label:"GrindOption", category:"grindOption" },
+  { number:"05", label:"Deliveries", category:"deliveries" },
 ];
 const accordion=[
 { 
-category:"Preferences",
+category:"preferences",
 title: "How do you drink your coffee?",
 options:[
   {
@@ -68,7 +48,7 @@ options:[
 ],
 },
 { 
-category:"BeanType",
+category:"beanType",
 title: "What type of coffee?",
 options:[
   {
@@ -110,7 +90,7 @@ options:[
 ],
 },
 { 
-category:"GrindOption",
+category:"grindOption",
 title: "Want us to grind them?",
 options:[
   {
@@ -129,6 +109,27 @@ options:[
     description:"Course ground beans specially suited for french press coffee.",
   }
 ],
+},
+{ 
+category:"deliveries",
+title: "How often should we deliver?",
+options:[
+  {
+    value:"Every week",
+    substitle: "Every week",
+    description:"$14.00 per shipment. Includes free first-class shipping.",
+  },
+    {
+    value:"Every 2 weeks",
+    substitle: "Every 2 weeks",
+    description:"$17.25 per shipment. Includes free priority shipping.",
+  },
+    {
+    value:"Every month",
+    substitle: "Every month",
+    description:"$22.50 per shipment. Includes free priority shipping.",
+  }
+],
 }
 ]
 function Createplan() { 
@@ -144,9 +145,9 @@ const toggleSection =(section)=>{
   setOpenSection(openSection === section?"": section);
 }
 const selectOption =(category,value)=>{
-  setSelections({...sections,[category]:value});
+  setSelections({...selections,[category]:value});
 }
-const isComplete= 
+const isComplete = 
 selections.preferences && 
 selections.beanType && 
 selections.quantity && 
@@ -177,7 +178,7 @@ selections.deliveries;
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 relative">
           {/* use map method */}
           {steps.map((step,index)=>(
-          <div className="text-center sm:text-left">
+          <div key={step.number} className="text-center sm:text-left">
           <div className="w-12 h-12 rounded-full border-2
           border-teal-600 bg-gray-800 mb-6 mx-auto sm:mx-0"/>
           <h3 className="font-fraunces text-5xl sm:text-7xl font-extrabold text-orange-200 mb-4">{step.number}</h3>
@@ -198,9 +199,10 @@ selections.deliveries;
     <div className="lg:col-span-3 mb-12 lg:mb-0">
       <div className="space-y-4">
         {sidebar.map((item,index)=>(
-         <div className={`text-lg sm:text-2xl font-bold ${selections[item.category] ?"text-gray-800" : "text-gray-400"}`}>
-          <span className="font-fraunces text-teal-600 mr-2 sm:mr-4">{item.number}</span>
-        <span className="font-fraunces text-gray-700">{item.label}</span>
+         <div key={item.category} className={`text-lg sm:text-2xl font-bold 
+         ${selections[item.category] ?"text-gray-800":"text-gray-400"}`}>
+         <span className="font-fraunces text-teal-600 mr-2 sm:mr-4">{item.number}</span>
+        <span className="font-fraunces">{item.label}</span>
         </div>  
         ))}
        
@@ -211,25 +213,24 @@ selections.deliveries;
     <div className="lg:col-span-9 space-y-12">
       {/* use map method */}
       {accordion.map((accordionItem,index)=>(
-        <div>
+        <div key={accordionItem.category} className="">
         <button className="w-full flex justify-between items-center mb-4 sm:mb-6" onClick={()=>toggleSection(accordionItem.category)}>
-          <h2 className="font-fraunces text-xl sm:text-4xl font-bold text-gray-500">{accordionItem.title}</h2>
-          <ChevronDown className="text-teal-600" size={28}/>
+          <h2 className="font-fraunces text-xl sm:text-4xl font-bold text-gray-500  hover:cursor-pointer">{accordionItem.title}</h2>
+          {openSection === accordionItem.category ?(<ChevronUp className="text-teal-600  hover:cursor-pointer" size={28}/>):
+          <ChevronDown className="text-teal-600  hover:cursor-pointer" size={28}/>}
         </button>
-        {/* conditional rendering */}
         <div className="space-y-8">     
-          {/* use map method */}
-          {}
-          <div className={`grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 transition-all duration-300`}>
+          <div className={`grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 transition-all duration-300  hover:cursor-pointer
+          ${openSection === accordionItem.category ? "max-h-screen opacity-100":"max-h-0 overflow-hidden" }`}>
             {/* use map method */}
             {accordionItem.options.map((option,index)=>(
-            <button className={`text-left p-6 sm:p-8 rounded-lg transition-all 
-            ${selections[accordionItem.category]===option.value ?"bg-gray-200":"hover:bg-gray-300"}`} 
+            <button key={option.value} className={`text-left p-6 sm:p-8 rounded-lg transition-all hover:cursor-pointer
+            ${selections[accordionItem.category]===option.value ?"bg-gray-300":"hover:bg-gray-400"}`} 
             onClick={()=>selectOption(accordionItem.category,option.value)}>
-              <h3 className="font-fraunces text-lg sm:text-2xl font-bold mb-2 sm:mb-4 text-gray-900">
+              <h3 className="font-fraunces text-lg sm:text-2xl font-bold mb-2 sm:mb-4 text-gray-900  hover:cursor-pointer">
               {option.substitle}
               </h3>
-              <p className="text-sm sm:text-base text-gray-700">{option.description}</p>
+              <p className="text-sm sm:text-base text-gray-700  hover:cursor-pointer">{option.description}</p>
             </button>
             ))}
            
@@ -248,11 +249,11 @@ selections.deliveries;
         <h3 className="font-fraunces text-gray-500 uppercase text-sm mb-4 opacity-50">Order summary</h3>
         <p className="text-white text-base sm:text-l leading-relaxed">
           I drink my coffee as{" "}
-          <span className="text-teal-500 font-bold">__</span> , with a{" "}
-          <span className="text-teal-500 font-bold">__</span> type of bean.{" "}
-          <span className="text-teal-500 font-bold">__</span> ground ala{" "}
-          <span className="text-teal-500 font-bold">__</span> ,sent to me{" "}
-          <span className="text-teal-500 font-bold">__</span>
+          <span className="text-teal-500 font-bold">{}</span> , with a{" "}
+          <span className="text-teal-500 font-bold">{}</span> type of bean.{" "}
+          <span className="text-teal-500 font-bold">{}</span> ground ala{" "}
+          <span className="text-teal-500 font-bold">{}</span> ,sent to me{" "}
+          <span className="text-teal-500 font-bold">{}</span>
         </p>
       </div>
 
