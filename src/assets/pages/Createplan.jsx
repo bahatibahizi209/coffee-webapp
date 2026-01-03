@@ -249,11 +249,11 @@ selections.deliveries;
         <h3 className="font-fraunces text-gray-500 uppercase text-sm mb-4 opacity-50">Order summary</h3>
         <p className="text-white text-base sm:text-l leading-relaxed">
           I drink my coffee as{" "}
-          <span className="text-teal-500 font-bold">{}</span> , with a{" "}
-          <span className="text-teal-500 font-bold">{}</span> type of bean.{" "}
-          <span className="text-teal-500 font-bold">{}</span> ground ala{" "}
-          <span className="text-teal-500 font-bold">{}</span> ,sent to me{" "}
-          <span className="text-teal-500 font-bold">{}</span>
+          <span className="text-teal-500 font-bold">{selections.preferences || "___"}</span> , with a{" "}
+          <span className="text-teal-500 font-bold">{selections.beanType || "___"}</span> type of bean.{" "}
+          <span className="text-teal-500 font-bold">{selections.quantity || "___"}</span> ground ala{" "}
+          <span className="text-teal-500 font-bold">{selections.grindOption || "___"}</span> ,sent to me{" "}
+          <span className="text-teal-500 font-bold">{selections.deliveries || "___"}</span>
         </p>
       </div>
 
