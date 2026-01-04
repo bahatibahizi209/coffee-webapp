@@ -258,7 +258,9 @@ selections.deliveries;
       </div>
 
       <div className="text-center mt-6">
-        <button className={`bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 sm:py-4 px-6 sm:px-12 rounded transition-all`}>
+        <button className={`py-3 sm:py-4 px-6 sm:px-12 rounded transition-all
+          ${isComplete ? "bg-teal-600 hover:bg-teal-700 text-white hover:cursor-pointer"
+          :"bg-gray-400 cursor-not-allowed"}`}>
           Create my plan!
         </button>
       </div>
